@@ -4,9 +4,17 @@ import { options } from "../api/auth/[...nextauth]/options";
 import Profile from "./profile";
 export default async function Nav() {
   const session = await getServerSession(options);
-  const resp = await fetch("http://localhost:3000/api/login", {
-    method: "GET",
-  });
+  if (session && session.user) {
+    const resp = await fetch("http://localhost:3000/api/login", {
+      method: "POST",
+      body: JSON.stringify({
+        name: session.user.name,
+        email: session.user.email,
+        image: session.user.image,
+      }),
+    });
+  }
+
   return (
     <div className="h-8 flex justify-between mt-4">
       <h1 className="text-[16px] pt-[13px] ml-4 font-outfit font-bold">

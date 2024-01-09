@@ -1,14 +1,22 @@
-import { NextResponse } from "next/server";
 import { prisma } from "@/lib/client";
-export async function GET(request: Request) {
-    console.log("in server");
-    await prisma.user.create({
-        data: {
-          email: "joshik@gmail.com",
-          name: "joshik",
-        },
-      });
 
+export async function POST(request: Request) {
+    const body = await request.json()
+    const respone1 = await prisma.user.findUnique({
+        where: {
+            email: body.email
+        }
+    })
+    if(!respone1) {
+        await prisma.user.create({
+            data: {
+                email: body.email,
+                name: body.name,
+                image: body.image,
+            }
+        })
+    }
+    console.log(respone1);
     return  new Response('hii');
 }
 

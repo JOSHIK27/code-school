@@ -7,7 +7,11 @@ import {
 
 export function AccordionDemo() {
   return (
-    <Accordion type="single" collapsible className="w-[1000px] mx-auto mt-12">
+    <Accordion
+      type="single"
+      collapsible
+      className="max-w-[1000px] mx-auto mt-12"
+    >
       <AccordionItem value="item-1">
         <AccordionTrigger className="text-2xl font-outfit font-[500]">
           Is it accessible?

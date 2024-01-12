@@ -6,13 +6,22 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = "postgresql://JOSHIK27:JSqap2F8XtKY@ep-lingering-hall-88627270.eu-central-1.aws.neon.tech/code-school?sslmode=require"
+  provider     = "postgresql"
+  url          = "postgresql://JOSHIK27:JSqap2F8XtKY@ep-lingering-hall-88627270.eu-central-1.aws.neon.tech/code-school?sslmode=require"
+  relationMode = "prisma"
 }
 
 model User {
-  id    Int    @id @default(autoincrement())
-  email String @unique
-  name  String
-  image String
+  id      Int       @id @default(autoincrement())
+  email   String    @unique
+  name    String
+  image   String
+  Courses Courses[]
+}
+
+model Courses {
+  id     Int    @id @default(autoincrement())
+  author User   @relation(fields: [idd], references: [id])
+  idd    Int
+  course String
 }

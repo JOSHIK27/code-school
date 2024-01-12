@@ -7,7 +7,13 @@ export async function POST(request: Request) {
             email: body.email
         }
     })
+
     if(!respone1) {
+        await prisma.courses.create({
+            data : {
+                course: "Temp"
+            }
+        })
         await prisma.user.create({
             data: {
                 email: body.email,

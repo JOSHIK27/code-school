@@ -1,9 +1,9 @@
-import iiii from "../../Hand-coding-bro.png";
+import iiii from "../../images/Hand-coding-bro.png";
 import { AccordionDemo } from "../shadcn/accordion";
-import img2 from "../../college-campus-cuate.png";
-import img3 from "../../exam.png";
-import img4 from "../../Teaching-amico.png";
-import img5 from "../../mentorship.png";
+import img2 from "../../images/college-campus-cuate.png";
+import img3 from "../../images/exam.png";
+import img4 from "../../images/Teaching-amico.png";
+import img5 from "../../images/mentorship.png";
 export default function Body() {
   return (
     <div>

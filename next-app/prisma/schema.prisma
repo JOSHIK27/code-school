@@ -25,3 +25,4 @@ model Courses {
   idd    Int
   course String
 }
+

@@ -21,7 +21,12 @@ export default function SubNav() {
       >
         Courses
       </h1>
-      <h1 className="text-[16px] font-outfit font-semibold text-[#797979] hover:text-[#0052C3] cursor-pointer mx-12">
+      <h1
+        onClick={() => {
+          router.push("/practice");
+        }}
+        className="text-[16px] font-outfit font-semibold text-[#797979] hover:text-[#0052C3] cursor-pointer mx-12"
+      >
         Practice
       </h1>
       <h1 className="text-[16px] font-outfit font-semibold text-[#797979] hover:text-[#0052C3] cursor-pointer mx-12">

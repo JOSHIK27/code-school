@@ -1,4 +1,3 @@
-import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { Provider } from "next-auth/providers/index";
 import type { NextAuthOptions } from "next-auth";

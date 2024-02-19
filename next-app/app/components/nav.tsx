@@ -27,7 +27,7 @@ export default async function Nav() {
           My Learning
         </button>
         {session && session.user ? (
-          <Profile src={session?.user.image} />
+          <Profile src={session.user.image ?? "defaultImageURL"} />
         ) : (
           <Btn />
         )}

@@ -2,15 +2,15 @@ export default function Footer() {
   return (
     <div className="mt-28">
       <div className="h-[400px] bg-[#0051C3]">
-        <div className="flex">
-          <div className="ml-[400px] pt-20">
+        <div className="flex flex-wrap justify-evenly">
+          <div className="pt-20">
             <h1 className="text-white font-outfit text-lg mb-[4px]">COURSES</h1>
             <h1 className="text-[#C4D3F0] font-outfit mb-[3px]">Part-1</h1>
             <h1 className="text-[#C4D3F0] font-outfit mb-[3px]">Part-2</h1>
             <h1 className="text-[#C4D3F0] font-outfit mb-[3px]">Part-3</h1>
             <h1 className="text-[#C4D3F0] font-outfit mb-[3px]">Part-4</h1>
           </div>
-          <div className="ml-[480px] mt-28">
+          <div className="mt-28">
             <h1 className="text-white font-outfit text-lg mb-[4px]">FAQs</h1>
             <h1 className="text-white font-outfit text-lg mb-[4px]">
               About Us

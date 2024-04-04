@@ -1,5 +1,5 @@
 import { Checkbox } from "@/components/ui/checkbox";
-import Nav from "../components/nav";
+import Nav from "../../components/nav";
 export default function Practice() {
   return (
     <div>

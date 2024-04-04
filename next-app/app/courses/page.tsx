@@ -2,7 +2,7 @@ import img1 from "../../images/download.png";
 import img2 from "../../images/download2.png";
 import img3 from "../../images/download3.png";
 import img4 from "../../images/download4.png";
-import Nav from "../components/nav";
+import Nav from "../../components/nav";
 export default function Courses() {
   return (
     <div>

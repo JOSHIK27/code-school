@@ -1,24 +1,16 @@
-import { getServerSession } from "next-auth/next";
+"use client";
+import { useSession, signIn, signOut } from "next-auth/react";
 import Btn from "./btn";
-import { options } from "../api/auth/[...nextauth]/options";
 import Profile from "./profile";
 import Link from "next/link";
-export default async function Nav() {
-  const session = await getServerSession(options);
-  if (session && session.user) {
-    const resp = await fetch("http://localhost:3000/api/login", {
-      method: "POST",
-      body: JSON.stringify({
-        name: session.user.name,
-        email: session.user.email,
-        image: session.user.image,
-      }),
-    });
-  }
-
+export default function Nav() {
+  const session = useSession();
+  console.log(session);
   return (
     <div className="flex flex-col sm:flex-row pt-[13px] justify-evenly">
-      <h1 className="text-[16px] mb-4 font-outfit font-semibold text-[#797979] hover:text-[#0052C3] cursor-pointer mx-12">
+      <h1
+        className={`text-[16px]  mb-4 font-outfit font-semibold text-[#797979] hover:text-[#0052C3] cursor-pointer mx-12`}
+      >
         <Link href={"/"}>Home</Link>
       </h1>
       <h1 className="text-[16px] mb-4 font-outfit font-semibold text-[#797979] hover:text-[#0052C3] cursor-pointer mx-12">
@@ -33,8 +25,10 @@ export default async function Nav() {
       <button className="font-outfit mb-4 font-semibold mx-4 bg-[#0052C4] text-white h-[40px] w-[144px] rounded-full">
         My Learning
       </button>
-      {session && session.user ? (
-        <Profile src={session.user.image ?? "defaultImageURL"} />
+      {session && session.data ? (
+        <Profile
+          src={session.data.user.image ? session.data.user.image : "undefined"}
+        />
       ) : (
         <Btn />
       )}

@@ -25,7 +25,7 @@ export default function Nav() {
       <button className="font-outfit mb-4 font-semibold mx-4 bg-[#0052C4] text-white h-[40px] w-[144px] rounded-full">
         My Learning
       </button>
-      {session && session.data ? (
+      {session && session.data && session.data.user ? (
         <Profile
           src={session.data.user.image ? session.data.user.image : "undefined"}
         />
